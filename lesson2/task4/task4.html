@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 4</title>
+  </head>
+  <body>
+    <p><a href="../hw2.html">назад</a></p>
+
+    <script>
+      let costCommodity = prompt("Введіть вартість товару", "0");
+      let quantityCommodity = prompt("Введіть кількість товару", "0");
+      let result = quantityCommodity * costCommodity;
+      let persent = Number(result * 0.05).toFixed(2);
+
+      window.document.write(`
+      <p>Загальна вартість: ${result}</p>
+      <p>ПДВ від загальної вартості: ${persent}</p>
+            `);
+    </script>
+  </body>
+</html>

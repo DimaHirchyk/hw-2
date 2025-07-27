@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 1</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body>
+    <p><a href="../hw2.html">назад</a></p>
+    <p>S<sub>1</sub>= a + 12 + b</p>
+    <p>\( S_2 = \sqrt{\frac{a + b}{2a}} \)</p>
+    <p>\( S_3 = \sqrt[3]{(a + b)c} \)</p>
+    <p>\( S_4 = \sin\left(\frac{a}{-b}\right) \)</p>
+
+    <script>
+      let a = parseInt(prompt("Введіть число а", "0"));
+      let b = parseInt(prompt("Введіть число b", "0"));
+      let c = parseInt(prompt("Введіть число c", "0"));
+
+      let S1 = a + 12 + b;
+      let S2 = Math.sqrt((a + b) / (2 * a));
+      let S3 = Math.cbrt((a + b) * c);
+      let S4 = Math.sin(a / -b);
+
+      window.document.write(`
+      S1 = ${S1} <br/>
+      S2= ${S2} <br/>
+      S3= ${S3}<br/>
+      S4= ${S4}`);
+    </script>
+  </body>
+</html>
+2

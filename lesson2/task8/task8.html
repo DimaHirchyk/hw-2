@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 5</title>
+  </head>
+  <body>
+    <p><a href="../hw2.html">назад</a></p>
+
+    <script>
+      let randomMonth = Math.round(Math.random() * 12) + 1;
+      let randomDay = Math.round(Math.random() * 6);
+
+      let result = randomMonth + randomDay;
+
+      window.document.write(`
+ 
+           <p>Random month: ${randomMonth} </p>
+           <p>Random day: ${randomDay} </p>
+           <p>Result: ${result} </p>
+        `);
+    </script>
+  </body>
+</html>

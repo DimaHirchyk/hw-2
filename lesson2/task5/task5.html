@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 5</title>
+  </head>
+  <body>
+    <p><a href="../hw2.html">назад</a></p>
+
+    <script>
+      let length = prompt("Введіть довжину в сантиметрах", "0");
+
+      const METR = 0.01;
+      const KILOMETR = 0.00001;
+
+      let resultMetr = (length * METR).toFixed(2);
+      let resultKm = (length * KILOMETR).toFixed(2);
+      window.document.write(`
+       <p>Відстань в метрах: ${resultMetr}</p>
+      <p>Відстань в кілометрах: ${resultKm}</p>
+      `);
+    </script>
+  </body>
+</html>

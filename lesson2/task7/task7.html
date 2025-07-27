@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 5</title>
+  </head>
+  <body>
+    <p><a href="../hw2.html">назад</a></p>
+
+    <script>
+      let prod1 = prompt("Введіть вартість продукту", "0");
+      let quantity1 = prompt("Введіть кількість", "0");
+      let prod2 = prompt("Введіть вартість продукту", "0");
+      let quantity2 = prompt(
+        "Введіть кількість секунд, що пройшла від початку доби",
+        "0"
+      );
+
+      let result1 = quantity1 * prod1;
+      let result2 = quantity2 * prod2;
+
+      let allResult = result1 + result2;
+
+      window.document.write(`
+           <p>Item 1: ${quantity1} x ${prod1} = ${result1}</p>
+           <p>Item 2: ${quantity2} x ${prod2} = ${result2}</p>
+           <p>Result: ${allResult} </p>
+        `);
+    </script>
+  </body>
+</html>

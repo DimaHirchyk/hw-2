@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 2</title>
+  </head>
+  <body>
+    <p><a href="../hw2.html">назад</a></p>
+
+    <script>
+      let a = parseInt(prompt("Введіть число а", "0"));
+      let b = parseInt(prompt("Введіть число b", "0"));
+
+      let sum = a + b;
+      let product = a * b;
+      let quotient = a / b;
+
+      window.document.write(`
+         <table border= "1px">
+      <tr>
+        <td>шуканий результат</td>
+        <td>отримане значення</td>
+       
+      </tr>
+      <tr> 
+        <td>сума</td>
+        <td>${sum}</td>
+      </tr>
+      <tr>
+        <td>добуток</td>
+        <td>${product}</td>
+      </tr>
+       <tr>
+        <td>частка</td>
+        <td>${quotient}</td>
+      </tr>
+    </table>
+      `);
+    </script>
+  </body>
+</html>
