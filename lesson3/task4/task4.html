@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 4</title>
+  </head>
+  <body>
+    <script>
+      let humanAge = Number(prompt("Enter human age"));
+      switch (true) {
+        case humanAge <= 6:
+          window.document.write(`
+    <h1>Дитина в садочку</h1>
+            `);
+          break;
+        case humanAge >= 6 && humanAge <= 17:
+          window.document.write(`
+    <h1>Школяр</h1>
+            `);
+          break;
+        case humanAge >= 18 && humanAge <= 22:
+          window.document.write(`
+    <h1>Студент</h1>
+            `);
+          break;
+        case humanAge >= 23 && humanAge <= 66:
+          window.document.write(`
+    <h1>Працівник</h1>
+            `);
+          break;
+        case humanAge >= 67 && humanAge <= 125:
+          window.document.write(`
+    <h1>Пенсіонер</h1>
+            `);
+          break;
+        default:
+          window.document.write(`
+    <h1>Люди стільки не живуть</h1>
+            `);
+      }
+    </script>
+  </body>
+</html>

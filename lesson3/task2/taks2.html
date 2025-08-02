@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 2</title>
+  </head>
+  <body>
+    <a href="../hw3.html">Back</a>
+    <script>
+      let priceProduct = Number(prompt("Enter price Product"));
+      let youtMoney = Number(prompt("Enter your money"));
+
+      const difference = youtMoney - priceProduct;
+      const PRICE_LOTTERY = 4;
+
+      if (youtMoney < priceProduct) {
+        window.document.write(`<h1> You can not buy this</h1>
+              `);
+      } else if (difference < PRICE_LOTTERY) {
+        window.document.write(`<h1>Thank you for your purchase</h1>`);
+      } else {
+        window.document.write(
+          `<h1>Maybe you wont buy lottery for ${PRICE_LOTTERY} grn</h1>`
+        );
+      }
+    </script>
+  </body>
+</html>

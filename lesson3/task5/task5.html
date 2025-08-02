@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <a href="../hw3.html">Back</a>
+    <script>
+      let category = prompt(
+        "Введіть категорію водія",
+        "A, B або C"
+      ).toLowerCase();
+
+      switch (category) {
+        case "a":
+          window.document.write(`<h1>А-мотоцикл</h1>`);
+          break;
+        case "b":
+          window.document.write(`<h1>В-легковий            автомобіль</h1>`);
+          break;
+        case "c":
+          window.document.write(`<h1>С-вантажний автомобіль</h1>`);
+          break;
+        default:
+          window.document.write(`<h1>Ви ввели не існуючу категорію</h1>`);
+          break;
+      }
+    </script>
+  </body>
+</html>

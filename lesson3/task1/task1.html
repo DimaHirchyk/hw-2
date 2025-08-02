@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <a href="../hw3.html">Back</a>
+    <script>
+      let firstNameChild = prompt("Enter child name");
+      let countFirstChildSweets = prompt(
+        `Enter count swets in ${firstNameChild}`
+      );
+
+      let secondNameChild = prompt("Enter child name");
+      let countSecondChildSweets = prompt(
+        `Enter count swets in ${secondNameChild}`
+      );
+      if (countFirstChildSweets == countSecondChildSweets) {
+        window.document.write(`<h1>Однакова кількість</h1>`);
+      } else if (countFirstChildSweets > countSecondChildSweets) {
+        window.document.write(`<h1>В ${firstNameChild} більше цукерок</h1>`);
+      } else {
+        window.document.write(`<h1>В ${secondNameChild} більше цукерок</h1>`);
+      }
+    </script>
+  </body>
+</html>

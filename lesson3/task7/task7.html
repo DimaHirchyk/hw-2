@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task7</title>
+  </head>
+  <body>
+    <script>
+      let season = Number(prompt("Введіть номер місяця"));
+
+      switch (true) {
+        case season >= 3 && season <= 5:
+          window.document.write(`<h1>Весна</h1>`);
+          break;
+        case season >= 6 && season <= 8:
+          window.document.write(`<h1>Літо</h1>`);
+          break;
+        case season >= 9 && season <= 11:
+          window.document.write(`<h1>Осінь</h1>`);
+          break;
+        case season === 12 || season <= 2:
+          window.document.write(`<h1>Зима</h1>`);
+          break;
+        default:
+          window.document.write(`<h1>Рік складається тільки з 12 місяців</h1>`);
+          break;
+      }
+    </script>
+  </body>
+</html>

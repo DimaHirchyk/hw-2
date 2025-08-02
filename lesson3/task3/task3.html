@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 3</title>
+  </head>
+  <body>
+    <a href="../hw3.html">Back</a>
+    <script>
+      let randomNumber = Math.round(Math.random() * 5) + 1;
+
+      let yourNumber = Number(prompt("Enter mystery number in 1 for 5"));
+
+      if (randomNumber === yourNumber) {
+        window.document.write(
+          `<h1>Вітаю! Ви вгадали число ${randomNumber} з першої спроби!</h1>`
+        );
+      } else {
+        yourNumber = Number(prompt("Ви не вгадали, пробуйте ще раз"));
+        if (randomNumber === yourNumber) {
+          window.document.write(
+            `<h1>Вітаю! Ви вгадали число ${randomNumber} з другої спроби!</h1>`
+          );
+        } else {
+          window.document.write(
+            `<h1>Нажаль ви не вгадали загадане число ${randomNumber}</h1>`
+          );
+        }
+      }
+      //  else {
+      //     window.document.write(`
+      // <h1>I'm sorry you didn't guess the number ${randomNumber}</h1>
+      //     `);
+      //   }
+    </script>
+  </body>
+</html>
