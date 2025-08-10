@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task -2</title>
+  </head>
+  <body>
+    <a href="../hw5.html">Back</a>
+
+    <script>
+      let evenCount = 0;
+      let oddCount = 0;
+
+      for (let i = 0; i <= 100; i++) {
+        let el = Math.floor(Math.random() * 1000 + 1);
+        if (el % 2 === 0) {
+          evenCount++;
+        } else {
+          oddCount++;
+        }
+      }
+
+      if (evenCount < oddCount) {
+        document.write(`<h1>Кількість парних чисел більша:${evenCount}</h1>`);
+      } else {
+        document.write(`<h1>Кількість не парних чисел більша:${oddCount}</h1>`);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task8</title>
+  </head>
+  <body>
+    <a href="../hw5.html">Back</a>
+
+    <script>
+      if (confirm("Почати тестування?")) {
+        for (let i = 0; i < 3; i++) {
+          let num = Math.floor(Math.random() * 5);
+          let promt = confirm(`Ваше число ${num}`);
+          if (promt) {
+            alert("я виграв");
+            break;
+          } else {
+            alert("я програв");
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

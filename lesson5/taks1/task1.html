@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task1</title>
+  </head>
+  <body>
+    <a href="../hw5.html">Back</a>
+
+    <script>
+      let countNum = Number(prompt("Введіть кільки виведених чисел"));
+      let ul = document.createElement("ul");
+
+      for (let i = 0; i <= countNum; i++) {
+        let num = Math.floor(Math.random() * 100) + 1;
+
+        let li = document.createElement("li");
+        li.textContent = num;
+        ul.append(li);
+      }
+      document.body.append(ul);
+    </script>
+  </body>
+</html>

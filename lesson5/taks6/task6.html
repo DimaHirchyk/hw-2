@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task6</title>
+  </head>
+  <body>
+    <a href="../hw5.html">Back</a>
+
+    <script>
+      let count = 1;
+      for (let t = 1; t <= 3; t++) {
+        let table = document.createElement("table");
+        table.style.border = "1px solid black";
+
+        for (let i = 1; i <= 3; i++) {
+          let tr = document.createElement("tr");
+          tr.style.border = "1px solid black";
+          for (let j = 1; j <= 3; j++) {
+            let td = document.createElement("td");
+            td.style.border = "1px solid black";
+            td.textContent = count++;
+            tr.appendChild(td);
+          }
+          table.appendChild(tr);
+        }
+        document.body.append(table);
+      }
+    </script>
+  </body>
+</html>

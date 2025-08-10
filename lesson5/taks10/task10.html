@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task10</title>
+  </head>
+  <body>
+    <a href="../hw5.html">Back</a>
+
+    <script>
+      const num1 = Number(prompt("Введіть число"));
+      const num2 = Number(prompt("Введіть число"));
+      let start = Math.min(num1, num2);
+      let end = Math.max(num1, num2);
+      let countNum = 0;
+
+      for (let i = start; i <= end; i++) {
+        if (i % 2 !== 0) {
+          countNum += i;
+        }
+      }
+      document.write(`    <h1>${countNum}</h1>
+`);
+    </script>
+  </body>
+</html>
