@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 0</title>
+  </head>
+  <body>
+    <a href="../hw6.html">Back</a>
+  </body>
+  <script>
+    const rowCount = parseInt(prompt("Введіть кількість рядків", "5"));
+    let colCount;
+
+    do {
+      colCount = parseInt(prompt("Введіть кількість букв в рядку", "5"));
+    } while (colCount > 26 || colCount < 1);
+
+    for (let row = 0; row < rowCount; row++) {
+      let line = "";
+      for (let col = 0; col < colCount; col++) {
+        let charCode = 65 + row + col;
+        line += String.fromCharCode(charCode);
+      }
+      document.write(`
+    <h1>${line}</h1>
+      `);
+    }
+  </script>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 3</title>
+  </head>
+  <body>
+    <a href="../hw6.html">Back</a>
+  </body>
+  <script>
+    let element = "o";
+    let heigth = 8;
+
+    for (let i = 0; i < heigth; i++) {
+      let newLine = " ";
+      for (let j = 0; j < heigth - i; j++) {
+        newLine += element;
+      }
+      document.write(`
+    <h1>${newLine}</h1>
+      `);
+    }
+  </script>
+</html>
