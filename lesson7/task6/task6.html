@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>task 6</title>
+  </head>
+  <body>
+    <a href="../hw7.html">Back</a>
+
+    <script>
+      function randomNum() {
+        let arr = [];
+        for (let i = 0; i < 2; i++) {
+          let num = parseInt(Math.random() * 10) + 1;
+          arr.push(num);
+        }
+        window.document.write(`
+      <h1>${arr} 
+        </h1>
+              `);
+        return arr;
+      }
+
+      function createTable(num) {
+        let table = document.createElement("table");
+        table.style.border = "1px solid black";
+
+        for (let i = 1; i <= num[0]; i++) {
+          let tr = document.createElement("tr");
+          tr.style.border = "1px solid black";
+
+          for (let j = 1; j <= num[1]; j++) {
+            let td = document.createElement("td");
+            td.style.border = "1px solid black";
+            td.textContent = j;
+            tr.appendChild(td);
+          }
+          table.appendChild(tr);
+        }
+        return document.body.append(table);
+      }
+
+      const numbers = randomNum();
+      createTable(numbers);
+    </script>
+  </body>
+</html>

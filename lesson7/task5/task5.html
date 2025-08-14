@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>task 4</title>
+  </head>
+  <body>
+    <a href="../hw7.html">Back</a>
+
+    <script>
+      function randomNum() {
+        let arr = [];
+        for (let i = 0; i < 1; i++) {
+          let num = parseInt(Math.random() * 200) + 1;
+          arr.push(num);
+        }
+        window.document.write(`
+      <h1>${arr} 
+        </h1>
+              `);
+        return arr;
+      }
+
+      const numbers = randomNum();
+
+      function inches(num) {
+        const oneInc = 2.54;
+        const result = num / oneInc;
+        return window.document.write(`
+      <h1>В ${num}см - ${result.toFixed(2)} дюймів 
+        </h1>
+              `);
+      }
+      function poundie(num) {
+        const oneKg = 2.205;
+        const result = num * oneKg;
+        return window.document.write(`
+      <h1>В ${num}кг - ${result.toFixed(2)} фунтів 
+        </h1>
+              `);
+      }
+      function miles(num) {
+        const oneMl = 1.609;
+        const result = num * oneMl;
+        return window.document.write(`
+      <h1>В ${num}км - ${result.toFixed(2)} миль 
+        </h1>
+              `);
+      }
+
+      inches(numbers);
+      poundie(numbers);
+      miles(numbers);
+    </script>
+  </body>
+</html>

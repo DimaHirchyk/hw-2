@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>task 1</title>
+  </head>
+  <body>
+    <a href="../hw7.html">Back</a>
+
+    <script>
+      function nameMonth(numMonth) {
+        let month;
+        switch (numMonth) {
+          case 1:
+            month = "січень";
+            break;
+          case 2:
+            month = "лютий";
+            break;
+          case 3:
+            month = "березень";
+            break;
+          case 4:
+            month = "квітень";
+            break;
+          case 5:
+            month = "травень";
+            break;
+          case 6:
+            month = "червень";
+            break;
+          case 7:
+            month = "липень";
+            break;
+          case 8:
+            month = "серпень";
+            break;
+          case 9:
+            month = "вересень";
+            break;
+          case 10:
+            month = "жовтень";
+            break;
+          case 11:
+            month = "листопад";
+            break;
+          case 12:
+            month = "грудень";
+            break;
+          default:
+            month = null;
+
+            break;
+        }
+        return month;
+      }
+      const yourMonth = parseInt(prompt("Введіть номер місяця", 1));
+      const month = nameMonth(yourMonth);
+      if (!month) {
+        window.document.write(`
+    <h1>Ви ввели не валідний місяць
+      </h1>
+            `);
+      } else {
+        window.document.write(`
+    <h1>Ви вибрали - ${month}</h1>
+            `);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>task 7</title>
+  </head>
+  <body>
+    <a href="../hw7.html">Back</a>
+
+    <script>
+      function randomNum() {
+        let arr = [];
+        for (let i = 0; i < 1; i++) {
+          let num = parseInt(Math.random() * 4) + 1;
+          arr.push(num);
+        }
+        window.document.write(`
+       <h1>${arr}
+         </h1>
+               `);
+        return arr;
+      }
+
+      function createImg(num) {
+        return window.document.write(`
+      <img src="picture${num}.png" alt="foto">
+               `);
+      }
+
+      const numbers = randomNum();
+      createImg(numbers);
+    </script>
+  </body>
+</html>

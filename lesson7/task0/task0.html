@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>task 0</title>
+  </head>
+  <body>
+    <a href="../hw7.html">Back</a>
+
+    <script>
+      function seasonYear(mons) {
+        let season;
+        switch (mons) {
+          case 12:
+          case 1:
+          case 2:
+            season = "зима";
+            break;
+          case 3:
+          case 4:
+          case 5:
+            season = "весна";
+            break;
+          case 6:
+          case 7:
+          case 8:
+            season = "літо";
+            break;
+          case 9:
+          case 10:
+          case 11:
+            season = "осінь";
+            break;
+
+          default:
+            season = null;
+
+            break;
+        }
+        return season;
+      }
+      const month = parseInt(prompt("Введіть номер місяця", 1));
+      const season = seasonYear(month);
+      if (!season) {
+        window.document.write(`
+    <h1>Ви ввели не валідну пору року</h1>
+            `);
+      } else {
+        window.document.write(`
+    <h1>Ви вибрали - ${season}</h1>
+            `);
+      }
+    </script>
+  </body>
+</html>

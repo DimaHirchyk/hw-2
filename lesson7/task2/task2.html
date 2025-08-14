@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>task 2</title>
+  </head>
+  <body>
+    <a href="../hw7.html">Back</a>
+
+    <script>
+      const yourday = parseInt(prompt("Введіть день тижня", 1));
+
+      function dayWeek(days) {
+        if (days >= 1 && days <= 5) {
+          return "робочий день";
+        } else if (days >= 6 && days <= 7) {
+          return "вихідний день";
+        } else {
+          return null;
+        }
+      }
+
+      const day = dayWeek(yourday);
+
+      if (!day) {
+        window.document.write(`
+    <h1>Ви ввели не існуючий день тижня 
+      </h1>
+            `);
+      } else {
+        window.document.write(`
+    <h1>Ви вибрали - ${day}</h1>
+            `);
+      }
+    </script>
+  </body>
+</html>

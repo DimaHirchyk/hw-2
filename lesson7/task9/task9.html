@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>task 8</title>
+  </head>
+  <body>
+    <a href="../hw7.html">Back</a>
+
+    <script>
+      function randomNum() {
+        let arr = [];
+        for (let i = 0; i < 20; i++) {
+          let num = parseInt(Math.random() * 200) - 100;
+          arr.push(num);
+        }
+        window.document.write(`
+      <h1>${arr} 
+        </h1>
+              `);
+        return arr;
+      }
+
+      function temperatures(num) {
+        let sum = 0;
+        for (let i = 0; i < num.length; i++) {
+          if (num[i] <= 0) {
+            sum++;
+          }
+        }
+        return window.document.write(`
+      <h1>${sum} чисел меньше 0
+        </h1>
+              `);
+      }
+
+      const numbers = randomNum();
+      temperatures(numbers);
+    </script>
+  </body>
+</html>

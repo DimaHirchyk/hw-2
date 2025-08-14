@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>task 4</title>
+  </head>
+  <body>
+    <a href="../hw7.html">Back</a>
+
+    <script>
+      function randomNum() {
+        let arr = [];
+        for (let i = 0; i < 3; i++) {
+          let num = parseInt(Math.random() * 400) - 200;
+          arr.push(num);
+        }
+        window.document.write(`
+      <h1>${arr}
+        </h1>
+              `);
+        return arr;
+      }
+
+      const numbers = randomNum();
+
+      function searchNum(num) {
+        let duoNum = 0;
+        let plus = 0;
+        let bigNum = 0;
+        for (let i = 0; i < num.length; i++) {
+          if (num[i] % 2 === 0) {
+            duoNum++;
+          }
+          if (num[i] > 0) {
+            plus++;
+          }
+          if (num[i] >= 100) {
+            bigNum++;
+          }
+        }
+        window.document.write(`
+    <h1>Парних: ${duoNum}, додатних: ${plus}, більше 100: ${bigNum}</h1>
+  `);
+      }
+
+      searchNum(numbers);
+    </script>
+  </body>
+</html>
