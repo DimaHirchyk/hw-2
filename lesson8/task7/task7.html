@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 7</title>
+  </head>
+  <body>
+    <a href="../hw8.html">Back</a>
+
+    <script>
+      function randomPayments() {
+        let prices = [];
+
+        for (let i = 0; i < 12; i++) {
+          let price = Math.round(Math.random() * 1000) + 1;
+          prices.push(price);
+        }
+
+        return prices;
+      }
+
+      const paymentPrice = randomPayments();
+
+      window.document.write(`
+                <h1>Платіжки за 12 місяців ${paymentPrice}
+                  </h1>
+                        `);
+
+      function paymentAllYear(payment) {
+        let sum = 0;
+        for (let i = 0; i < payment.length; i++) {
+          sum += payment[i];
+        }
+        return sum;
+      }
+      const allYear = paymentAllYear(paymentPrice);
+      window.document.write(`
+                <h1>Сума платіжок за 12 місяців ${allYear}
+                  </h1>
+                        `);
+
+      function paymentFirstHalfYear(payment) {
+        let sum = 0;
+        for (let i = 0; i < payment.length; i++) {
+          if (i < 6) {
+            sum += payment[i];
+          }
+        }
+        return sum;
+      }
+      const firstHalfYear = paymentFirstHalfYear(paymentPrice);
+      window.document.write(`
+                <h1>Сума платіжок у першій половині року ${firstHalfYear} грн
+                  </h1>
+                        `);
+
+      function paymentSecondHalfYear(payment) {
+        let sum = 0;
+        for (let i = 0; i < payment.length; i++) {
+          if (i > 6) {
+            sum += payment[i];
+          }
+        }
+        return sum;
+      }
+      const secondHalfYear = paymentSecondHalfYear(paymentPrice);
+      window.document.write(`
+                <h1>Сума платіжок у другій половині року ${secondHalfYear} грн
+                  </h1>
+                        `);
+
+      function paymentInSummer(payment) {
+        let sum = 0;
+        for (let i = 0; i < payment.length; i++) {
+          if (i >= 5 && i <= 7) {
+            sum += payment[i];
+          }
+        }
+        return sum;
+      }
+      const paymentSummer = paymentInSummer(paymentPrice);
+      window.document.write(`
+                <h1>Сума платіжок за літо ${paymentSummer} грн
+                  </h1>
+                        `);
+
+      function paymentSecondQuarter(payment) {
+        let sum = 0;
+        for (let i = 0; i < payment.length; i++) {
+          if (i >= 4 && i <= 6) {
+            sum += payment[i];
+          }
+        }
+        return sum;
+      }
+      const secondQuarter = paymentSecondQuarter(paymentPrice);
+      window.document.write(`
+                <h1>Сума платіжок за ІІ квартал ${secondQuarter} грн
+                  </h1>
+                        `);
+
+      function paymentEvenMonths(payment) {
+        let sum = 0;
+        for (let i = 0; i < payment.length; i++) {
+          if (i % 2 === 0) {
+            sum += payment[i];
+          }
+        }
+        return sum;
+      }
+      const evenMonths = paymentEvenMonths(paymentPrice);
+      window.document.write(`
+                <h1>Сума платіжок за парні місяці ${evenMonths} грн
+                  </h1>
+                        `);
+
+      function paymentStartSeason(payment) {
+        let sum = 0;
+        for (let i = 0; i < payment.length; i++) {
+          if (i % 4 === 0) {
+            sum += payment[i];
+          }
+        }
+        return sum;
+      }
+      const startSeason = paymentStartSeason(paymentPrice);
+      window.document.write(`
+                <h1>Сума платіжок за місяці, які є початковими у сезоні ${startSeason} грн
+                  </h1>
+                        `);
+    </script>
+  </body>
+</html>

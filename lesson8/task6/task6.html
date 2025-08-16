@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 6</title>
+  </head>
+  <body>
+    <a href="../hw8.html">Back</a>
+
+    <script>
+      const products = [
+        "Хліб",
+        "Молоко",
+        "Сир",
+        "Яблука",
+        "Картопля",
+        "М'ясо",
+        "Кава",
+        "Цукор",
+      ];
+
+      function randomPrice() {
+        let prices = [];
+
+        for (let i = 0; i < products.length; i++) {
+          let price = Math.round(Math.random() * 100) + 1;
+          prices.push(price);
+        }
+
+        return prices;
+      }
+
+      const productsPrice = randomPrice();
+
+      function priceAndProd(prod, price) {
+        let array = [];
+        let row = "";
+        for (let i = 0; i < prod.length; i++) {
+          row = prod[i] + " - " + price[i] + " грн";
+          array.push(row);
+        }
+        return array;
+      }
+
+      const outputPriceAndProd = priceAndProd(products, productsPrice);
+      window.document.write(`
+                <h1> ${outputPriceAndProd}
+                  </h1>
+                        `);
+
+      const yourMoney = parseInt(prompt("Скільки грошей ви маєте?", "70"));
+
+      function canAfford(prod, price, money) {
+        let accessibility = [];
+        let row = "";
+        for (let i = 0; i < prod.length; i++) {
+          if (money >= price[i]) {
+            row = prod[i];
+            accessibility.push(row);
+          }
+        }
+        return accessibility;
+      }
+
+      const canAffordPay = canAfford(products, productsPrice, yourMoney);
+      window.document.write(`
+                <h1>За ${yourMoney} ви можете купити ${canAffordPay}
+                  </h1>
+                        `);
+    </script>
+  </body>
+</html>

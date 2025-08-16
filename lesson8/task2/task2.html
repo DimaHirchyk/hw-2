@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 2</title>
+  </head>
+  <body>
+    <a href="../hw8.html">Back</a>
+
+    <script>
+      const week = 7;
+
+      function randomCountClient() {
+        let arr = [];
+        let num = 0;
+
+        for (let i = 1; i <= week; i++) {
+          num = Math.floor(Math.random() * 100 + 1);
+          arr.push(num);
+        }
+
+        return arr;
+      }
+      const client = randomCountClient();
+      window.document.write(`
+                <h1>Кількість клієнтів: ${client}
+                  </h1>
+                        `);
+
+      function dayWeek(day) {
+        if (day === null) {
+          return "Такого дня не було";
+        }
+        let dayName = "";
+
+        switch (day) {
+          case 1:
+            dayName = "Понеділок";
+            break;
+          case 2:
+            dayName = "Вівторок";
+            break;
+          case 3:
+            dayName = "Середу";
+            break;
+          case 4:
+            dayName = "Четверг";
+            break;
+          case 5:
+            dayName = "П’ятницю";
+            break;
+          case 6:
+            dayName = "Суботу";
+            break;
+          case 7:
+            dayName = "Неділю";
+            break;
+          default:
+            dayName = "Такого дня не було";
+        }
+
+        return dayName;
+      }
+
+      function minClientInDayWeek(array) {
+        let result = [];
+        for (let i = 0; i < array.length; i++) {
+          if (array[i] < 20) {
+            let day = dayWeek(i + 1);
+            result.push(day);
+          }
+        }
+        return result;
+      }
+
+      const minClientsWeek = minClientInDayWeek(client);
+
+      if (minClientsWeek.length === 0) {
+        window.document.write(`
+    <h1>В цьому тижні меньше 20 клієнтів не було</h1>
+  `);
+      } else {
+        window.document.write(`
+    <h1>Дні коли кількість клієнтів було меньша 20, це: ${minClientsWeek.join(
+      ", "
+    )}</h1>
+  `);
+      }
+
+      function minClientInDay(array) {
+        let day = "";
+        const min = Math.min(...array);
+        for (let i = 0; i < array.length; i++) {
+          if (min === array[i]) {
+            day = dayWeek(i + 1);
+          }
+        }
+        return day;
+      }
+      const minClientDay = minClientInDay(client);
+
+      window.document.write(`
+            <h1>Мінімальна кількість клієнтів була в ${minClientDay} 
+              </h1>
+                    `);
+
+      function maxClientInDay(array) {
+        let day = "";
+        const max = Math.max(...array);
+        for (let i = 0; i < array.length; i++) {
+          if (max === array[i]) {
+            day = dayWeek(i + 1);
+          }
+        }
+        return day;
+      }
+      const maxClientDay = maxClientInDay(client);
+      window.document.write(`
+            <h1>Максимальна кількість клієнтів була в ${maxClientDay} 
+              </h1>
+                    `);
+
+      function totalClientWorkDay(array) {
+        let sum = 0;
+        let day;
+
+        for (let i = 0; i < array.length; i++) {
+          if (i + 1 <= 5) {
+            sum += array[i];
+          }
+        }
+        return sum;
+      }
+
+      const totalWorkDay = totalClientWorkDay(client);
+      window.document.write(`
+            <h1>Загалом в будні дні було ${totalWorkDay} клієнтів
+              </h1>
+                    `);
+
+      function totalClientWeekendDay(array) {
+        let sum = 0;
+        let day;
+
+        for (let i = 0; i < array.length; i++) {
+          if (i + 1 > 5) {
+            sum += array[i];
+          }
+        }
+        return sum;
+      }
+
+      const totalWeekendDay = totalClientWeekendDay(client);
+      window.document.write(`
+            <h1>Загалом в вихідні дні було ${totalWeekendDay} клієнтів
+              </h1>
+                    `);
+    </script>
+  </body>
+</html>

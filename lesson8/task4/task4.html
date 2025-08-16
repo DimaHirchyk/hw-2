@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 4</title>
+  </head>
+  <body>
+    <a href="../hw8.html">Back</a>
+
+    <script>
+      function randomPlate(array) {
+        const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        let plate = "";
+        const maxLengthPlate = Math.round(Math.random() * 8) + 2;
+
+        for (let i = 0; i < maxLengthPlate; i++) {
+          plate += chars.charAt(Math.round(Math.random() * chars.length));
+        }
+
+        return plate;
+      }
+
+      function generate1000Plate(plate) {
+        let arr = [];
+
+        for (let i = 0; i < 5000; i++) {
+          arr.push(randomPlate());
+        }
+        return arr;
+      }
+
+      const generatePlate = generate1000Plate();
+      console.log(generatePlate);
+
+      const yourLetter = prompt("Виберіть одну букву", "A").toLocaleLowerCase();
+
+      function searchFirstLeter(arrayPlate, letter) {
+        let sum = 0;
+        for (let i = 0; i < arrayPlate.length; i++) {
+          if (arrayPlate[i].toLowerCase().startsWith(letter)) {
+            sum++;
+          }
+        }
+        return sum;
+      }
+
+      const searchLetter = searchFirstLeter(generatePlate, yourLetter);
+      if (yourLetter.length > 1) {
+        window.document.write(`
+                <h1>Виберіть тільки одну букву
+                  </h1>
+                        `);
+      } else {
+        window.document.write(`
+                <h1>Номерних автомобілів з першою буквой ${yourLetter.toLocaleUpperCase()} зустрічається ${searchLetter} разів
+                  </h1>
+                        `);
+      }
+
+      function searchFirstLastLetter(arrayPlate, letter) {
+        let sumPlate = 0;
+
+        for (let i = 0; i < arrayPlate.length; i++) {
+          const firstLetter = arrayPlate[i]
+            .toLocaleLowerCase()
+            .startsWith(letter);
+          const lastLetter = arrayPlate[i].toLocaleLowerCase().endsWith(letter);
+          if (firstLetter && lastLetter) {
+            sumPlate++;
+          }
+        }
+        return sumPlate;
+      }
+
+      const searchFirstLast = searchFirstLastLetter(generatePlate, yourLetter);
+      window.document.write(`
+                <h1>Номерних автомобілів з першою і останьою однаковой буквой ${yourLetter.toLocaleUpperCase()} зустрічається ${searchFirstLast} разів
+                  </h1>
+                        `);
+
+      function lengthPlate(arrayPlate) {
+        let sumPlate = 0;
+        for (let i = 0; i < arrayPlate.length; i++) {
+          if (arrayPlate[i].length >= 5) {
+            sumPlate++;
+          }
+        }
+        return sumPlate;
+      }
+
+      const platelength = lengthPlate(generatePlate);
+      window.document.write(`
+                <h1>Номерних автомобілів з 5 і більше символів зустрічається ${platelength}
+                  </h1>
+                        `);
+    </script>
+  </body>
+</html>

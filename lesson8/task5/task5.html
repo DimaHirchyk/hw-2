@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 5</title>
+  </head>
+  <body>
+    <a href="../hw8.html">Back</a>
+
+    <script>
+      function randomAssessments() {
+        let assessments = [];
+
+        for (let i = 0; i < 10; i++) {
+          let assessment = Math.round(Math.random() * 12) + 1;
+          assessments.push(assessment);
+        }
+
+        return assessments;
+      }
+
+      const quantityAssessments = randomAssessments();
+      window.document.write(`
+                <h1>Оцінки учня: ${quantityAssessments}
+                  </h1>
+                        `);
+
+      function deucesQuantity(array) {
+        let sum = 0;
+        for (let i = 0; i < array.length; i++) {
+          if (array[i] === 2) {
+            sum++;
+          }
+        }
+        return sum;
+      }
+      const quantityDeuces = deucesQuantity(quantityAssessments);
+      window.document.write(`
+                <h1> ${quantityDeuces} двійок в данного учня
+                  </h1>
+                        `);
+
+      function numberOfGoodMarks(array) {
+        let sum = 0;
+        for (let i = 0; i < array.length; i++) {
+          if (array[i] >= 7 && array[i] <= 9) {
+            sum++;
+          }
+        }
+        return sum;
+      }
+
+      const goodMarks = numberOfGoodMarks(quantityAssessments);
+      window.document.write(`
+                <h1> ${goodMarks} хороших оцінок в данного учня
+                  </h1>
+                        `);
+
+      function numberGradesBelowAverage(array) {
+        let sum = 0;
+        for (let i = 0; i < array.length; i++) {
+          if (array[i] < 7) {
+            sum++;
+          }
+        }
+        return sum;
+      }
+
+      const gradesBelowAverage = numberGradesBelowAverage(quantityAssessments);
+      window.document.write(`
+                <h1> ${gradesBelowAverage} оцінок, які нижче середнього в данного учня
+                  </h1>
+                        `);
+    </script>
+  </body>
+</html>

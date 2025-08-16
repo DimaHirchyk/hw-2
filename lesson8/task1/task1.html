@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 1</title>
+  </head>
+  <body>
+    <a href="../hw8.html">Back</a>
+
+    <script>
+      const countIteams = parseInt(prompt("Виберіть кількість предметів", 5));
+
+      function randomAssessments(num) {
+        let arr = [];
+        for (let i = 1; i <= num; i++) {
+          let num = Math.floor(Math.random() * 5 + 1);
+          arr.push(num);
+        }
+
+        return arr;
+      }
+
+      const assessments = randomAssessments(countIteams);
+      window.document.write(`
+      <h1>Оцінки учня: ${assessments}
+        </h1>
+              `);
+
+      function averageScore(assessment) {
+        let num = 0;
+        for (let i = 0; i < assessment.length; i++) {
+          num += assessment[i];
+        }
+        let round = num / assessment.length;
+        return round;
+      }
+
+      const gradePointAverage = averageScore(assessments);
+      window.document.write(`
+      <h1>Середній бал учня: ${gradePointAverage}
+        </h1>
+              `);
+
+      function categories(mark) {
+        let roundNum = Math.round(mark);
+        let score = "";
+        switch (roundNum) {
+          case 5:
+            score = "відмінник";
+            break;
+
+          case 4:
+            score = "хорошист";
+            break;
+
+          case 3:
+            score = "трійочник";
+            break;
+
+          default:
+            score = "двійочник ";
+
+            break;
+        }
+        return score;
+      }
+
+      const categoriesStudent = categories(gradePointAverage);
+      window.document.write(`
+      <h1>Студент: ${categoriesStudent}
+        </h1>
+              `);
+    </script>
+  </body>
+</html>

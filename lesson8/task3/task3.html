@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 3</title>
+  </head>
+  <body>
+    <a href="../hw8.html">Back</a>
+
+    <script>
+      const names = ["Олександр", "Марія", "Іван", "Анна", "Дмитро"];
+
+      function randomCountName(array) {
+        let arr = [];
+
+        for (let i = 0; i < array.length; i++) {
+          let count = Math.floor(Math.random() * 5);
+          let repeatName = Array(count).fill(array[i]).join(", ");
+          arr.push(repeatName);
+        }
+
+        return arr;
+      }
+      const allName = randomCountName(names);
+      window.document.write(`
+                <h1> ${allName}
+                  </h1>
+                        `);
+
+      function searchIvan(array) {
+        let count = 0;
+        for (let i = 0; i < array.length; i++) {
+          if (array[i] === "Іван") {
+            count++;
+          }
+        }
+        return count;
+      }
+
+      const flatNames = allName.join(", ").split(", ");
+
+      const search = searchIvan(flatNames);
+      window.document.write(`
+                <h1>Імя Іван вивелось ${search} разів
+                  </h1>
+                        `);
+    </script>
+  </body>
+</html>
