@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 9</title>
+  </head>
+  <hr>
+    <a href="../leson9.html">Back</a>
+
+    <p> 
+Дано масив імен. Сформувати масив з перших літер цих імен.
+
+</p>
+
+
+<hr/>
+
+<script>
+
+ const randomName = ()=> {
+        const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        let plate = "";
+        const maxLengthPlate = Math.round(Math.random() * 8) + 2;
+
+        for (let i = 0; i < 6; i++) {
+          plate += chars.charAt(Math.round(Math.random() * chars.length));
+        }
+
+        return plate;
+      }
+
+
+
+      function generateName() {
+        let arr = [];
+
+        for (let i = 0; i < 200; i++) {
+          arr.push(randomName());
+        }
+        return arr;
+      }
+
+      const generateArrayName = generateName();
+
+
+const startNameA = generateArrayName.filter((el) =>  
+ el.startsWith('A'))
+
+window.document.write(`<h1>Масив з 200-ста імен, які починаються на "А": <br/> ${startNameA}</h1>`)
+
+</script>
+  </body>
+</html>

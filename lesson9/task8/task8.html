@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 8</title>
+  </head>
+  <hr>
+    <a href="../leson9.html">Back</a>
+
+    <p> 
+ Дано масив номерів авто. Сформувати новий масив тих, які починаються на «А»
+
+</p>
+
+
+<hr/>
+
+<script>
+
+ const randomPlate = ()=> {
+        const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+        let plate = "";
+        const maxLengthPlate = Math.round(Math.random() * 8) + 2;
+
+        for (let i = 0; i < 6; i++) {
+          plate += chars.charAt(Math.round(Math.random() * chars.length));
+        }
+
+        return plate;
+      }
+
+
+
+      function generatePlate() {
+        let arr = [];
+
+        for (let i = 0; i < 500; i++) {
+          arr.push(randomPlate());
+        }
+        return arr;
+      }
+
+      const generate1000Plate = generatePlate(randomPlate);
+
+
+const startPlateA = generate1000Plate.filter((el) =>  
+ el.startsWith('A'))
+
+window.document.write(`<h1>Масив 500-ста номерів які починаються на "А": <br/> ${startPlateA}</h1>`)
+
+</script>
+  </body>
+</html>

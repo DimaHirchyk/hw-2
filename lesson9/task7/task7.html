@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 7</title>
+  </head>
+  <hr>
+    <a href="../leson9.html">Back</a>
+
+    <p> 
+Дано масив цін. Змінити цей масив так, що на ціни товарів, які більші за 1000 грн. дати 30% знижки.
+</p>
+
+
+<hr/>
+
+<script>
+const lengthArr = parseInt(prompt('Введіть довжину масиву', '5'))
+
+function randomPrice(arr) {
+  let array  =[]
+  let num = 0
+  for (let i = 0; i < arr; i++) {
+     num =Math.floor(Math.random() * 1500)
+    array.push(num)
+  }
+  return array
+}
+
+const randomArrayPrice = randomPrice(lengthArr)
+
+const priceWithDiscont = randomArrayPrice.map((el) =>  {
+  if (el > 1000 ){return el *(1-30/100)}
+  return el
+})
+
+window.document.write(`<h1>Ваш масив цін: <br/> ${randomArrayPrice}</h1>`)
+window.document.write(`<h1>Сума додатніх чисел масиву: <br/> ${priceWithDiscont}</h1>`)
+
+</script>
+  </body>
+</html>
