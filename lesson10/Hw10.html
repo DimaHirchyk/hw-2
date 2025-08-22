@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HW 10</title>
+  </head>
+  <body>
+    <a href="../index.html">Back</a>
+
+    <script>
+      function randomPrice() {
+        let array = [];
+        for (let i = 1; i <= 100; i++) {
+          let price = Math.floor(Math.random() * 10000);
+          array.push(price);
+        }
+        return array;
+      }
+      const randomPrices = randomPrice();
+
+      console.log(randomPrices);
+
+      const onlyBigger1000 = randomPrices.filter((el) => el > 1000);
+      window.document
+        .write(`<h1>новий масив, у якому є тільки ті, що більші за 1000 грн, з довжиною ${onlyBigger1000.length} з ${randomPrices.length}
+              : <br/> ${onlyBigger1000}</h1>`);
+
+      //   ================================================================
+
+      const onlyNumBigger1000 = randomPrices
+        .map((el, ind) => (el > 1000 ? ind : -1))
+        .filter((ind) => ind !== -1);
+
+      window.document.write(
+        `<h1>новий масив, у якому є номери тільки тих, що більші за 1000 грн: <br/> ${onlyNumBigger1000}</h1>`
+      );
+
+      //   ================================================================
+
+      const pricesHigherPreviousValue = randomPrices
+        .map((el, ind) => (ind > 0 && el > randomPrices[ind - 1] ? el : null))
+        .filter((ind) => ind !== null);
+
+      window.document.write(
+        `<h1>список з тих цін, які більші за попереднє значення
+        : <br/> ${pricesHigherPreviousValue}</h1>`
+      );
+
+      //   ================================================================
+
+      const maxNum = Math.max(...randomPrices);
+      const priceValuePercentageMaxPrice = randomPrices.map((el) =>
+        Math.floor((el / maxNum) * 100)
+      );
+
+      window.document.write(
+        `<h1>новий масив, що міститиме значення цін у відсотках стосовно максимального (${maxNum})
+
+        : <br/> ${priceValuePercentageMaxPrice}</h1>`
+      );
+
+      //   ================================================================
+
+      const countNumberPriceChanges = randomPrices.reduce(
+        (acc, el, ind, array) => {
+          if (ind > 0 && el > array[ind - 1]) {
+            acc++;
+          }
+          return acc;
+        },
+        0
+      );
+
+      window.document.write(
+        `<h1>Підрахувати кількість змін цін
+
+        : <br/> ${countNumberPriceChanges}</h1>`
+      );
+
+      //   ================================================================
+
+      const whetherPriceLessThan1000 = randomPrices.every((el) => el < 1000);
+      if (whetherPriceLessThan1000) {
+        window.document.write(`<h1>Немає цін меньших за 1000</h1>`);
+      } else {
+        window.document.write(`<h1>Є ціни меньші за 1000</h1>`);
+      }
+
+      //   ================================================================
+
+      const whetherAllPricesOver1000 = randomPrices.every((el) => el > 1000);
+      if (whetherAllPricesOver1000) {
+        window.document.write(`<h1>Всі ціни більші за 1000</h1>`);
+      } else {
+        window.document.write(`<h1>Не всі ціни більші за 1000</h1>`);
+      }
+
+      //   ==================================================================
+
+      const numberPricesGreaterThan1000 = randomPrices.reduce((acc, el) => {
+        if (el > 1000) {
+          acc++;
+        }
+        return acc;
+      }, 0);
+
+      window.document.write(
+        `<h1>кількість цін, що більше за 1000
+        : <br/> ${numberPricesGreaterThan1000}</h1>`
+      );
+
+      //   ==================================================================
+
+      const calcSumPricesExceeding1000 = randomPrices.reduce((acc, el) => {
+        if (el > 1000) {
+          acc += el;
+        }
+        return acc;
+      }, 0);
+
+      window.document.write(
+        `<h1>Підрахувати суму цін, що більше за 1000
+        : <br/> ${calcSumPricesExceeding1000}</h1>`
+      );
+
+      //   ==================================================================
+
+      const findFirstPriceGreater1000 = randomPrices.find((el) => el > 1000);
+      window.document.write(
+        `<h1>Знайти першу ціну, що більше за 1000
+        : <br/> ${findFirstPriceGreater1000}</h1>`
+      );
+
+      //   ==================================================================
+
+      const findIndexFirstPriceGreater1000 = randomPrices.findIndex(
+        (el) => el > 1000
+      );
+      window.document.write(
+        `<h1>)Знайти індекс першої ціни, що більше за 1000
+        : <br/> ${findIndexFirstPriceGreater1000}</h1>`
+      );
+
+      //   ==================================================================
+
+      const findIndexLastPriceGreater1000 = randomPrices.findLastIndex(
+        (el) => el > 1000
+      );
+      window.document.write(
+        `<h1>Знайти індекс останньої ціни, що більше за 1000
+        : <br/> ${findIndexLastPriceGreater1000}</h1>`
+      );
+
+      //   ==================================================================
+
+      const findLastPriceGreater1000 =
+        randomPrices[findIndexLastPriceGreater1000];
+
+      window.document.write(
+        `<h1>Знайти останню ціну, що більше за 1000
+        : <br/> ${findLastPriceGreater1000}</h1>`
+      );
+    </script>
+  </body>
+</html>
