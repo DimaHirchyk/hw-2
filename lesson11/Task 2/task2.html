@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="https://edu.fls.guru/favicon.ico"
+      type="image/x-icon" />
+    <title>Document</title>
+  </head>
+  <body>
+    <a href="../hw11.html">Back</a>
+    <p>
+      Задача 2. Дано інформацію про прибуток К магазинів протягом тижня. Знайти
+      :
+    </p>
+
+    <script>
+      const numShop = 8;
+      const week = 7;
+
+      function randomArray(num) {
+        let coreArray = [];
+        for (let i = 0; i < numShop; i++) {
+          let array = [];
+          for (let j = 0; j < week; j++) {
+            let num = Math.floor(Math.random() * 1500) + 1;
+            array.push(num);
+          }
+          coreArray.push(array);
+        }
+        return coreArray;
+      }
+
+      const randomArr = randomArray();
+
+      document.write(`
+           <h1>${JSON.stringify(randomArr)}</h1>
+             `);
+
+      function dayWeek(day) {
+        let dayName = "";
+
+        switch (day) {
+          case 1:
+            dayName = "Понеділок";
+            break;
+          case 2:
+            dayName = "Вівторок";
+            break;
+          case 3:
+            dayName = "Середа";
+            break;
+          case 4:
+            dayName = "Четверг";
+            break;
+          case 5:
+            dayName = "П’ятниця";
+            break;
+          case 6:
+            dayName = "Субота";
+            break;
+          case 7:
+            dayName = "Неділя";
+            break;
+        }
+
+        return dayName;
+      }
+
+      let table = document.createElement("table");
+      table.style.border = "1px solid black";
+
+      randomArr.forEach((row, index) => {
+        let tr = document.createElement("tr");
+        tr.style.border = "1px solid black";
+        tr.textContent = `Магазин №${index + 1}`;
+
+        row.forEach((col, ind) => {
+          let td = document.createElement("td");
+          td.style.border = "1px solid black";
+          td.style.padding = "5 px";
+          td.textContent = `${dayWeek(ind + 1)}: ${col}`;
+
+          // td.textContent = col;
+          tr.appendChild(td);
+        });
+
+        return table.appendChild(tr);
+      });
+
+      document.body.appendChild(table);
+
+      //==============11111111111111111===============
+
+      const totalProfitWeek = randomArr.map((array) =>
+        array.reduce((acc, arr) => acc + arr, 0)
+      );
+
+      document.write(`
+           <h1>загальний прибуток кожного масиву за тиждень - ${totalProfitWeek}</h1>
+             `);
+
+      //==============222222222222222===============
+
+      const totalProfitAllShopInDay = randomArr[0].map((_, index) =>
+        randomArr.reduce((acc, arr) => acc + arr[index], 0)
+      );
+
+      document.write(`
+           <h1>загальний прибуток усіх магазинів по дням (загальний прибуток усіх магазинів за понеділок, за вівторок, і т.д.); - ${totalProfitAllShopInDay}</h1>
+             `);
+
+      //==============333333333333333===============
+
+      const totalProfitWorkDay = randomArr
+        .map((week) =>
+          week.filter((days, ind) => ind < 5).reduce((acc, day) => acc + day, 0)
+        )
+        .reduce((a, d) => a + d, 0);
+
+      document.write(`
+           <h1>загальний прибуток за робочі дні - ${totalProfitWorkDay}</h1>
+             `);
+
+      //==============44444444444444444===============
+
+      const totalProfitWekendDay = randomArr
+        .map((week) =>
+          week.filter((days, ind) => ind > 5).reduce((acc, day) => acc + day, 0)
+        )
+        .reduce((a, d) => a + d, 0);
+
+      document.write(`
+           <h1>загальний прибуток за вихідні дні - ${totalProfitWekendDay}</h1>
+             `);
+
+      //==============55555555555555555555555===============
+
+      const maxProfitWednesday = Math.max(
+        ...randomArr.map((week) => week.filter((days, ind) => ind === 2))
+      );
+
+      document.write(`
+           <h1>максимальний прибуток за середу - ${maxProfitWednesday}</h1>
+             `);
+
+      //==============6666666666666666666666===============
+
+      const longListMoreThan200 = randomArr.flatMap((week) =>
+        week.filter((day) => day > 200)
+      );
+
+      document.write(`
+           <h1>сформувати загальний список (одновимірний масив) зі значенням, які що більші за 200 - ${longListMoreThan200}</h1>
+             `);
+
+      //==============7777777777777777777===============
+
+      const everyWeekGrowth = randomArr.map((week) =>
+        week.sort((a, b) => a - b)
+      );
+
+      document.write(`
+           <h1>відсортувати кожен день за зростанням - ${JSON.stringify(
+             everyWeekGrowth
+           )}</h1>
+             `);
+
+      //==============8888888888888===============
+
+      const sortWeekInDescendingOrder = randomArr.map((week) =>
+        week.sort((a, b) => b - a)
+      );
+
+      document.write(`
+           <h1>відсортувати тижні (рядки) за спаданням максимального елементи у цьому тижні (рядку), тобто при порівнянні рядків потрібно порівнювати максимальні елементи у кожному з цих рядків
+      ${JSON.stringify(sortWeekInDescendingOrder)}</h1>
+             `);
+
+      //==============9999999999999999===============
+
+      const organiseWeeksDescendingOrderAmount = randomArr
+        .map((week) => week.reduce((acc, day) => acc + day, 0))
+        .sort((a, b) => b - a);
+
+      document.write(`
+           <h1>упорядкувати тижні (рядки) за спаданням суми елементів у рядку (тобто при порівнянні двох рядків треба знайти суму кожного з рядків і порівнювати ці суми, на основі цих сум буде зрозуміло, який з елементів повинен іти раніше).
+      ${organiseWeeksDescendingOrderAmount}</h1>
+             `);
+    </script>
+  </body>
+</html>

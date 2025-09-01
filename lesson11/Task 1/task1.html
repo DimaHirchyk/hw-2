@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="https://edu.fls.guru/favicon.ico"
+      type="image/x-icon" />
+    <title>Document</title>
+  </head>
+  <body>
+    <a href="../hw11.html">Back</a>
+    <p>
+      Задача 1. Знайти суми елементів у вказаній області (зафарбована область
+      охоплює відповідну половину рядків і стовпців)
+    </p>
+
+    <script>
+      function randomArray() {
+        let coreArray = [];
+        for (let i = 0; i < 4; i++) {
+          let array = [];
+          for (let j = 0; j < 4; j++) {
+            let num = Math.floor(Math.random() * 9) + 1;
+            array.push(num);
+          }
+          coreArray.push(array);
+        }
+        return coreArray;
+      }
+
+      const randomArr = randomArray();
+
+      document.write(`
+      <h1>${JSON.stringify(randomArr)}</h1>
+        `);
+
+      // =======================================
+
+      let table = document.createElement("table");
+      table.style.border = "1px solid black";
+
+      randomArr.forEach((row) => {
+        let tr = document.createElement("tr");
+        tr.style.border = "1px solid black";
+
+        row.forEach((col) => {
+          let td = document.createElement("td");
+          td.style.border = "1px solid black";
+          td.style.padding = "5px";
+
+          td.textContent = col;
+          tr.appendChild(td);
+        });
+        return table.appendChild(tr);
+      });
+
+      document.body.appendChild(table);
+
+      // ===================11111111=================================
+
+      const firstTask = randomArr
+        .slice(0, Math.floor(randomArr.length / 2))
+        .reduce((acc, row) => {
+          return (
+            acc +
+            row
+              .slice(0, Math.floor(row.length / 2))
+              .reduce((ac, num) => ac + num, 0)
+          );
+        }, 0);
+
+      document.write(`
+      <h1>номери рядків від 0 до половини, стовпці від 0 до половини - ${firstTask}</h1>
+        `);
+
+      // ===================222222222222=================================
+
+      const secondTask = randomArr
+        .slice(0, Math.floor(randomArr.length / 2))
+        .reduce((acc, row) => {
+          return (
+            acc +
+            row
+              .slice(Math.floor(row.length / 2))
+              .reduce((ac, num) => ac + num, 0)
+          );
+        }, 0);
+
+      document.write(`
+      <h1>номери рядків від 0 до половини, стовпці від половини до кінця - ${secondTask}</h1>
+        `);
+
+      // ===================333333333333=================================
+
+      const thridTask = randomArr
+        .slice(Math.floor(randomArr.length / 2))
+        .reduce((acc, row) => {
+          return (
+            acc +
+            row
+              .slice(0, Math.floor(row.length / 2))
+              .reduce((ac, num) => ac + num, 0)
+          );
+        }, 0);
+
+      document.write(`
+      <h1>номери рядків (від половини до кінця, стовпці від 0 до половини - ${thridTask}</h1>
+        `);
+
+      // ===================444444444444=================================
+
+      const quarterTask = randomArr
+        .slice(Math.floor(randomArr.length / 2))
+        .reduce((acc, row) => {
+          return (
+            acc +
+            row
+              .slice(Math.floor(row.length / 2))
+              .reduce((ac, num) => ac + num, 0)
+          );
+        }, 0);
+
+      document.write(`
+      <h1>номери рядків від половини до кінця , стовпці від половини до кінця - ${quarterTask}</h1>
+        `);
+
+      // ===================55555555555=================================
+
+      const fifthTask = randomArr.reduce((acc, row, ind) => {
+        if (ind % 2 === 0) {
+          return acc + row.reduce((ac, num) => ac + num, 0);
+        }
+        return acc;
+      }, 0);
+
+      document.write(`
+      <h1>Суму парних рядків - ${fifthTask}</h1>
+        `);
+
+      // ===================666666666666=================================
+
+      const sixthTask = randomArr.reduce((acc, row, ind) => {
+        if (ind % 2 !== 0) {
+          return acc + row.reduce((ac, num) => ac + num, 0);
+        }
+        return acc;
+      }, 0);
+
+      document.write(`
+      <h1>Суму непарних стовпців - ${sixthTask}</h1>
+        `);
+
+      // ===================666666666666=================================
+
+      const seventhTask1 = randomArr
+        .filter((_, rowIndex) => rowIndex % 2 === 0)
+        .map((row, ind) => row.filter((num, i) => i % 2 !== 0))
+        .flat();
+
+      const seventhTask2 = randomArr
+        .filter((_, rowIndex) => rowIndex % 2 !== 0)
+        .map((row, ind) => row.filter((num, i) => i % 2 === 0))
+        .flat();
+
+      document.write(`
+      <h1>У парних рядках – непарні стовпці (${seventhTask1}), у непарних – парні (${seventhTask2}). - </h1>
+        `);
+    </script>
+  </body>
+</html>
