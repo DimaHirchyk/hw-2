@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 3</title>
+  </head>
+  <body>
+    <a href="../lesson13.html">Back</a>
+    <p>
+      Задача 7. Тренажер додавання. Кожні 10 секунд користувачу задають
+      випадковий приклад з додавання двох цифр і робиться перевірка.
+    </p>
+
+    <script>
+      function randomExample(a, b) {
+        const result = parseInt(prompt(`Введіть відповідь ${a} + ${b} `));
+        return result;
+      }
+
+      function runExample() {
+        const a = Math.floor(Math.random() * 10) + 1;
+        const b = Math.floor(Math.random() * 10) + 1;
+        const x = a + b;
+        let result;
+        do {
+          result = randomExample(a, b);
+
+          if (result !== x) {
+            alert("Не вірно");
+          }
+        } while (result !== x);
+        alert("Вірно");
+      }
+      runExample();
+
+      setInterval(runExample, 10000);
+    </script>
+  </body>
+</html>

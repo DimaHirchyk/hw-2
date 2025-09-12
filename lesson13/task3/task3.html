@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 3</title>
+  </head>
+  <body>
+    <a href="../lesson13.html">Back</a>
+    <p>
+      Задача 4. Дано масив хлопців і дівчат вивести всі можливі комбінації для
+      танців з хлопців і дівчат.
+    </p>
+
+    <script>
+      const girls = ["Olga", "Maria", "Anna", "Kateryna", "Sofia", "Nadiia"];
+
+      const boys = ["Ivan", "Petro", "Andrii", "Mykola", "Dmytro", "Oleh"];
+
+      for (const girl of girls) {
+        for (const boy of boys) {
+          document.write(`${girl} - ${boy} <br>`);
+        }
+      }
+    </script>
+  </body>
+</html>
