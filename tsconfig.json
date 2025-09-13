@@ -5,11 +5,11 @@
     "strict": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "outDir": "./lesson12/js" /* компілювати JS в ту ж папку */,
-    "rootDir": "./lesson12/ts" /* брати TS файли з lesson12 */,
     "skipLibCheck": true,
-    "allowJs": true
+    "allowJs": true,
+    "rootDir": ".",
+    "outDir": "."
   },
-  "include": ["lesson12/ts/*.ts"],
+  "include": ["lesson*/script/*.ts"],
   "exclude": ["node_modules"]
 }
