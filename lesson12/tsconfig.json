@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "es6" /* Цільова версія JavaScript */,
+    "module": "commonjs" /* Система модулів */,
+    "strict": true /* Увімкнення всіх строгих перевірок типів */,
+    "esModuleInterop": true /* Підтримка імпорту ES-модулів */,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "./js" /* Папка для згенерованих JS-файлів */,
+    "rootDir": "./" /* Директорія з вихідними файлами */,
+    "skipLibCheck": true,
+    "allowJs": true /* Дозволяє компілювати JS файли */
+  },
+  "include": ["*.ts", "*.js", "js/**/*" /* Якщо є підпапки з JS/TS */],
+  "exclude": ["node_modules"]
+}

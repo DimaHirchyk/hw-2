@@ -1,0 +1,3 @@
+class TBankomat {
+  constructor() {}
+}
